@@ -8,9 +8,9 @@ import Class8visit from './pages/Class8visit'
 import Clinicsession from './pages/Clinicsession'
 import Counseling from './pages/Counseling'
 import Dashboard from './pages/Dashboard'
-import Education from './pages/Education'
+// import Education from './pages/Education'
 import Profile from './pages/Profile'
-import Lifeskills from './pages/Lifeskills'
+// import Lifeskills from './pages/Lifeskills'
 import Register from './pages/Register'
 import Settings from './pages/Settings'
 import Schoolsession from './pages/Schoolsession'
@@ -37,8 +37,8 @@ function App() {
             </Route>
             <Route exact path="/counseling" element={<Counseling />}/>
             <Route exact path="/dashboard" element={<Dashboard />}/>
-            <Route exact path="/education" element={<Education />}/>
-            <Route exact path="/lifeskills" element={<Lifeskills />}/>
+            {/* <Route exact path="/education" element={<Education />}/>
+            <Route exact path="/lifeskills" element={<Lifeskills />}/> */}
             <Route exact path="/profile" element={<Profile />}/>
             <Route exact path="/register" element={<Register />}/>
             <Route exact path="/settings" element={<Settings />}/>

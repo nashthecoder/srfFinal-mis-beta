@@ -2,7 +2,7 @@ import React from 'react'
 // import { render } from 'react-dom'
 import Wizard from "./Wizard"
 import Styles from './Styles'
-import { Field } from 'react-final-form'
+import { Form, Field } from 'react-final-form'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import NavSideBar from '../components/NavSideBar'
@@ -49,6 +49,13 @@ const RenderDatePicker = ({ name, input, input: { value, onChange } }) => {
 
 const required = (value) => (value ? undefined : "Required");
 
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
+
+const onSubmit = async values => {
+    await sleep(300)
+    window.alert(JSON.stringify(values, 0, 2))
+}
+
 function Signup() {
     return (
         <div>
@@ -66,13 +73,13 @@ function Signup() {
                         </button>
                     </div>
                 </div>
-                <div className="row">
-                <div className="col">
-                    <div className="container">
-                        <Styles>
-                            <Wizard>
-                                <Wizard.Page>
-                                    <h4 className="section-header text-success">Player Bio</h4>
+                <div className="container">
+                    <Styles>
+                        <Form
+                            onSubmit={onSubmit}
+                            render={({ handleSubmit, form, submitting, pristine, values }) => (
+                                <form onSubmit={handleSubmit}>
+                                <h4 className="section-header text-success">Player Bio</h4>
                                     <div>
                                     <Field
                                         name="firstName"
@@ -111,8 +118,8 @@ function Signup() {
                                     />
                                     <Error name="dateOfBirth" />
                                     </div>
-                                    <div>
                                     <label>Gender</label>
+                                    <div>
                                     <Field name="gender" component="select">
                                         <option />
                                         <option value="female">Female</option>
@@ -142,8 +149,8 @@ function Signup() {
                                     />
                                     <Error name="lastName" />
                                     </div>
-                                    <div>
                                     <label>Relationship</label>
+                                    <div>
                                     <Field name="relationship" component="select">
                                         <option />
                                         <option value="father">Father</option>
@@ -154,8 +161,8 @@ function Signup() {
                                     </div>
                                     <hr />
                                     <h4 className="section-header text-success">SRF Details</h4>
-                                    <div>
                                     <label>Clinic</label>
+                                    <div>
                                     <Field name="clinic" component="select">
                                         <option />
                                         <option value="father">Father</option>
@@ -168,8 +175,8 @@ function Signup() {
                                     </Field>
                                     <Error name="clinic" />
                                     </div>
-                                    <div>
                                     <label>Team</label>
+                                    <div>
                                     <Field name="team" component="select">
                                         <option />
                                         <option value="father">Father</option>
@@ -180,12 +187,16 @@ function Signup() {
                                     </Field>
                                     <Error name="team" />
                                     </div>
-                                </Wizard.Page>
-                            </Wizard>
-                        </Styles>
-                    </div>
-                </div>
-                </div>
+                                    <div className="buttons">
+                                        <button type="submit" disabled={submitting || pristine}>
+                                        Submit
+                                        </button>
+                                    </div>
+                                </form>
+                            )}
+                            />
+                    </Styles>
+                </div>    
             </main>
         </div>
     )

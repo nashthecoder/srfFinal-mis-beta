@@ -8,7 +8,7 @@ function Profile() {
             <NavSideBar />
             <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h3 className="h3">Profiles</h3>
+                    <h3 className="h3">Player Profiles</h3>
                     <div className="btn-toolbar mb-2 mb-md-0">
                     <div className="btn-group me-2">
                         <button type="button" className="btn btn-sm btn-outline-success px-4">Edit</button>
@@ -19,15 +19,13 @@ function Profile() {
                         </button>
                     </div>
                 </div>
-            </main>
-            <div className="row">
+                <div className="row">
                 <div className="col">
                     <div className="grid-photo">
-                        <h2>Player Profile</h2>
                         <main>
                         <div className="album py-5 bg-light">
-                            <div className="container">
-                            <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                            <div className="container my-6">
+                            <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
                                 <div className="col">
                                 <div className="card shadow-sm">
                                     <img className="img pt-5 mb-3" width="100%" src={Image} alt="" />
@@ -163,6 +161,8 @@ function Profile() {
                     </div>
                 </div>
             </div>
+            </main>
+
         </div>
             
     )

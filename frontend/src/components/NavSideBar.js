@@ -32,13 +32,13 @@ function NavSideBar() {
                     <nav id="sidebarMenu" className="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                     <div className="position-sticky pt-5">
                         <ul className="nav flex-column">
-                        <li className="nav-item">
+                        {/* <li className="nav-item">
                             <a className="nav-link" href="/dashboard">
                             <i className="bi bi-layout-wtf text-success px-3"></i>
                             <span data-feather="home"></span>
                             Dashboard
                             </a>
-                        </li>
+                        </li> */}
                         <li className="nav-item">
                             <a className="nav-link" href="/signup">
                             <span data-feather="file"></span>
@@ -74,7 +74,7 @@ function NavSideBar() {
                             Counseling
                             </a>
                         </li>
-                        <li className="nav-item">
+                        {/* <li className="nav-item">
                             <a className="nav-link" href="/education">
                             <span data-feather="layers"></span>
                             <i className="bi bi-book-half text-success px-3"></i>
@@ -87,7 +87,7 @@ function NavSideBar() {
                             <i className="bi bi-house-fill text-success px-3"></i>
                             Lifeskills
                             </a>
-                        </li>
+                        </li> */}
                         <li className="nav-item">
                             <a className="nav-link" href="/profile">
                             <span data-feather="layers"></span>
@@ -98,7 +98,7 @@ function NavSideBar() {
                         </ul>
 
                         <h6 className="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                        <span>Saved reports</span>
+                        <span>ACCOUNT</span>
                         <a className="link-secondary" href="#" aria-label="Add a new report">
                             <span data-feather="plus-circle"></span>
                         </a>
